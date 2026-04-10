@@ -1,0 +1,112 @@
+{
+  "pages": [
+    {
+      "path": "pages/record/index",
+      "style": {
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/record/dream-input",
+      "style": {
+        "navigationBarTitleText": "记录梦境",
+        "navigationBarBackgroundColor": "#0D1B2A",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/record/reality-input",
+      "style": {
+        "navigationBarTitleText": "记录现实",
+        "navigationBarBackgroundColor": "#0D1B2A",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/record/dream-result",
+      "style": {
+        "navigationBarTitleText": "梦境解析",
+        "navigationBarBackgroundColor": "#0D1B2A",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/verify/index",
+      "style": {
+        "navigationBarTitleText": "梦验档案",
+        "navigationBarBackgroundColor": "#0D1B2A",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/verify/comparison",
+      "style": {
+        "navigationBarTitleText": "梦验对照",
+        "navigationBarBackgroundColor": "#0D1B2A",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/verify/stats",
+      "style": {
+        "navigationBarTitleText": "梦验统计",
+        "navigationBarBackgroundColor": "#0D1B2A",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/discover/index",
+      "style": {
+        "navigationBarTitleText": "发现",
+        "navigationBarBackgroundColor": "#0D1B2A",
+        "navigationBarTextStyle": "white"
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#0D1B2A",
+        "navigationBarTextStyle": "white"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#5A6B7C",
+    "selectedColor": "#FFD700",
+    "backgroundColor": "#0D1B2A",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/record/index",
+        "text": "记录",
+        "iconPath": "static/icons/record.png",
+        "selectedIconPath": "static/icons/record-active.png"
+      },
+      {
+        "pagePath": "pages/verify/index",
+        "text": "验梦",
+        "iconPath": "static/icons/verify.png",
+        "selectedIconPath": "static/icons/verify-active.png"
+      },
+      {
+        "pagePath": "pages/discover/index",
+        "text": "发现",
+        "iconPath": "static/icons/discover.png",
+        "selectedIconPath": "static/icons/discover-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "static/icons/profile.png",
+        "selectedIconPath": "static/icons/profile-active.png"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#0D1B2A",
+    "backgroundColor": "#0D1B2A",
+    "backgroundTextStyle": "dark"
+  }
+}
