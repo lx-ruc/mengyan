@@ -139,7 +139,7 @@ function levelProgress(): number {
     <view class="profile-page__section">
       <text class="profile-page__section-title">关于</text>
       <view class="profile-page__about">
-        <text class="profile-page__about-text">梦验 v0.1.0</text>
+        <text class="profile-page__about-text">梦迹 v0.1.0</text>
         <text class="profile-page__about-desc">记录梦境、验证现实、解读潜意识——你的AI验梦师</text>
       </view>
     </view>

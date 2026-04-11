@@ -5,7 +5,7 @@ import { extractDreamKeywords } from '@/data/dream-symbols'
 import { getComparisonComment, getScoreLevel } from '@/data/interpreter-templates'
 import { checkApiHealth, fetchDreamRealityMatch } from '@/utils/api'
 
-/** 梦验对照引擎（支持真实 AI + Mock 降级） */
+/** 梦迹对照引擎（支持真实 AI + Mock 降级） */
 export function useDreamRealityMatcher() {
   async function matchDreamReality(
     dream: DreamRecord,

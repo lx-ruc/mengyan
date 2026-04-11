@@ -238,7 +238,7 @@ app.post('/api/match-dream-reality', async (req, res) => {
     if (e.status === 429) {
       return res.status(429).json({ success: false, error: 'API 调用频率超限，请稍后重试' })
     }
-    res.status(502).json({ success: false, error: '梦验对照失败，请稍后重试' })
+    res.status(502).json({ success: false, error: '梦迹对照失败，请稍后重试' })
   }
 })
 

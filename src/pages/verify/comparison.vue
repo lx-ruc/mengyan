@@ -61,7 +61,7 @@ onUnload(() => {
       <template v-else-if="reality && dream">
         <!-- 标题 -->
         <view class="comparison-page__header">
-          <text class="comparison-page__title">梦验对照</text>
+          <text class="comparison-page__title">梦迹对照</text>
         </view>
 
         <!-- 梦 vs 现实对照卡 -->
@@ -69,7 +69,7 @@ onUnload(() => {
 
         <!-- AI 吻合度 -->
         <view v-if="reality.finalScore != null" class="comparison-page__score-section">
-          <text class="comparison-page__section-title">梦验吻合度</text>
+          <text class="comparison-page__section-title">梦迹吻合度</text>
           <view class="comparison-page__score-card">
             <MatchScore :score="reality.finalScore" size="lg" />
             <text class="comparison-page__score-num">{{ Math.round(reality.finalScore * 100) }}%</text>

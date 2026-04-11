@@ -2,7 +2,7 @@
 import { onLaunch } from '@dcloudio/uni-app'
 
 onLaunch(() => {
-  console.log('梦验 App Launch')
+  console.log('梦迹 App Launch')
 })
 </script>
 

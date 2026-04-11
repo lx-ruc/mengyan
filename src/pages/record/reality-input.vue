@@ -71,7 +71,7 @@ async function handleSubmit(): Promise<void> {
 
     userStore.incrementRealities()
 
-    // 调用 AI 梦验对照
+    // 调用 AI 梦迹对照
     const matchResult = await matchDreamReality(dream.value, {
       id,
       dreamId: dreamId.value,

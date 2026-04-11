@@ -33,7 +33,7 @@
     {
       "path": "pages/verify/index",
       "style": {
-        "navigationBarTitleText": "梦验档案",
+        "navigationBarTitleText": "梦迹档案",
         "navigationBarBackgroundColor": "#0D1B2A",
         "navigationBarTextStyle": "white"
       }
@@ -41,7 +41,7 @@
     {
       "path": "pages/verify/comparison",
       "style": {
-        "navigationBarTitleText": "梦验对照",
+        "navigationBarTitleText": "梦迹对照",
         "navigationBarBackgroundColor": "#0D1B2A",
         "navigationBarTextStyle": "white"
       }
@@ -49,7 +49,7 @@
     {
       "path": "pages/verify/stats",
       "style": {
-        "navigationBarTitleText": "梦验统计",
+        "navigationBarTitleText": "梦迹统计",
         "navigationBarBackgroundColor": "#0D1B2A",
         "navigationBarTextStyle": "white"
       }
@@ -85,7 +85,7 @@
       },
       {
         "pagePath": "pages/verify/index",
-        "text": "验梦",
+        "text": "梦迹",
         "iconPath": "static/icons/verify.png",
         "selectedIconPath": "static/icons/verify-active.png"
       },

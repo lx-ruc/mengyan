@@ -45,7 +45,7 @@ export const useUserStore = defineStore('user', () => {
   })
 
   const levelTitle = computed(() => {
-    const titles = ['', '梦境新手', '梦验学徒', '解梦行者', '验梦大师', '潜意识领航员']
+    const titles = ['', '梦境新手', '梦迹学徒', '解梦行者', '验梦大师', '潜意识领航员']
     return titles[level.value]
   })
 
