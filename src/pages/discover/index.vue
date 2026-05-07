@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 import { DREAM_SYMBOLS } from '@/data/dream-symbols'
+import { useTheme } from '@/composables/useTheme'
 import type { SymbolCategory } from '@/types/dream'
+
+const { cssVars } = useTheme()
 
 const categories: { key: SymbolCategory | 'all'; label: string }[] = [
   { key: 'all', label: '全部' },
@@ -63,7 +66,7 @@ const tips = [
 </script>
 
 <template>
-  <scroll-view scroll-y class="discover-page">
+  <scroll-view scroll-y class="discover-page" :style="cssVars">
     <!-- 记梦技巧 -->
     <view class="discover-page__section">
       <text class="discover-page__section-title">记梦技巧</text>
@@ -149,7 +152,7 @@ const tips = [
 
   &__section-title {
     font-size: 30rpx;
-    color: $accent-color;
+    color: var(--theme-accent);
     font-weight: 600;
     margin-bottom: $spacing-md;
     display: block;
@@ -208,8 +211,8 @@ const tips = [
     flex-shrink: 0;
 
     &--active {
-      background-color: rgba(255, 215, 0, 0.15);
-      border: 2rpx solid $accent-color;
+      background-color: var(--theme-accent-bg);
+      border: 2rpx solid var(--theme-accent);
     }
   }
 
@@ -218,7 +221,7 @@ const tips = [
     color: $text-secondary;
 
     .discover-page__category--active & {
-      color: $accent-color;
+      color: var(--theme-accent);
     }
   }
 
@@ -301,8 +304,8 @@ const tips = [
 
   &__article-tag {
     font-size: 20rpx;
-    color: $dream-purple;
-    background-color: rgba(123, 45, 142, 0.12);
+    color: var(--theme-accent);
+    background-color: var(--theme-accent-bg);
     padding: 2rpx 12rpx;
     border-radius: $radius-xs;
     flex-shrink: 0;

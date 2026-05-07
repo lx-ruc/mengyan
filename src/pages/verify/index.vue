@@ -3,8 +3,10 @@ import { computed, ref } from 'vue'
 import { useDreamStore } from '@/stores/dream'
 import { useRealityStore } from '@/stores/reality'
 import { useUserStore } from '@/stores/user'
+import { useTheme } from '@/composables/useTheme'
 import DreamCard from '@/components/common/DreamCard.vue'
 
+const { cssVars } = useTheme()
 const dreamStore = useDreamStore()
 const realityStore = useRealityStore()
 const userStore = useUserStore()
@@ -86,7 +88,7 @@ function deleteDream(dreamId: string): void {
 </script>
 
 <template>
-  <view class="archive-page">
+  <view class="archive-page" :style="cssVars">
     <!-- 顶部操作栏 -->
     <view class="archive-page__header">
       <text class="archive-page__count">共 {{ dreams.length }} 条梦境记录</text>
@@ -155,13 +157,13 @@ function deleteDream(dreamId: string): void {
 
   &__stats-btn {
     padding: $spacing-xs $spacing-md;
-    background-color: rgba(255, 215, 0, 0.1);
+    background-color: var(--theme-accent-bg);
     border-radius: $radius-lg;
   }
 
   &__stats-btn-text {
     font-size: 24rpx;
-    color: $accent-color;
+    color: var(--theme-accent);
   }
 
   &__search {

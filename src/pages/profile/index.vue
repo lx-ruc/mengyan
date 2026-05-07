@@ -3,7 +3,9 @@ import { useUserStore } from '@/stores/user'
 import { useDreamStore } from '@/stores/dream'
 import { useRealityStore } from '@/stores/reality'
 import { useSettingsStore } from '@/stores/settings'
+import { useTheme } from '@/composables/useTheme'
 
+const { colors, cssVars } = useTheme()
 const userStore = useUserStore()
 const dreamStore = useDreamStore()
 const realityStore = useRealityStore()
@@ -15,7 +17,7 @@ function editNickname(): void {
     editable: true,
     placeholderText: '请输入昵称',
     content: userStore.nickname,
-    confirmColor: '#FFD700',
+    confirmColor: colors.value.accent,
     success: (res) => {
       if (res.confirm && res.content?.trim()) {
         userStore.setNickname(res.content.trim())
@@ -67,7 +69,7 @@ function levelProgress(): number {
 </script>
 
 <template>
-  <view class="profile-page">
+  <view class="profile-page" :style="cssVars">
     <!-- 个人信息 -->
     <view class="profile-page__header">
       <view class="profile-page__avatar">
@@ -112,7 +114,7 @@ function levelProgress(): number {
         <text class="profile-page__setting-label">通知提醒</text>
         <switch
           :checked="settingsStore.notificationEnabled"
-          color="#FFD700"
+          :color="colors.accent"
           @change="(e: any) => settingsStore.setNotificationEnabled(e.detail.value)"
         />
       </view>
@@ -121,7 +123,7 @@ function levelProgress(): number {
         <text class="profile-page__setting-label">音效</text>
         <switch
           :checked="settingsStore.soundEnabled"
-          color="#FFD700"
+          :color="colors.accent"
           @change="(e: any) => settingsStore.setSoundEnabled(e.detail.value)"
         />
       </view>
@@ -163,7 +165,7 @@ function levelProgress(): number {
     width: 120rpx;
     height: 120rpx;
     border-radius: $radius-full;
-    background: linear-gradient(135deg, $dream-purple, $accent-color);
+    background: linear-gradient(135deg, var(--theme-gradient-start), var(--theme-accent));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,8 +195,8 @@ function levelProgress(): number {
 
   &__level {
     font-size: 24rpx;
-    color: $accent-color;
-    background-color: rgba(255, 215, 0, 0.1);
+    color: var(--theme-accent);
+    background-color: var(--theme-accent-bg);
     padding: 2rpx 16rpx;
     border-radius: $radius-lg;
   }
@@ -218,7 +220,7 @@ function levelProgress(): number {
 
   &__progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, $dream-purple, $accent-color);
+    background: linear-gradient(90deg, var(--theme-gradient-start), var(--theme-accent));
     border-radius: 4rpx;
     transition: width 0.3s ease;
   }
@@ -247,7 +249,7 @@ function levelProgress(): number {
 
   &__stat-value {
     font-size: 36rpx;
-    color: $accent-color;
+    color: var(--theme-accent);
     font-weight: 700;
   }
 

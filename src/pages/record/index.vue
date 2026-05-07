@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { useTimeGreeting } from '@/composables/useTimeGreeting'
+import { useTheme } from '@/composables/useTheme'
 import { useDreamStore } from '@/stores/dream'
 import { useRealityStore } from '@/stores/reality'
 import { useUserStore } from '@/stores/user'
@@ -10,6 +11,7 @@ import TimeGreeting from '@/components/record/TimeGreeting.vue'
 import StatusCards from '@/components/record/StatusCards.vue'
 
 const { period, greeting, backgroundType, mode, periodIcon } = useTimeGreeting()
+const { cssVars } = useTheme()
 const dreamStore = useDreamStore()
 const realityStore = useRealityStore()
 const userStore = useUserStore()
@@ -49,7 +51,7 @@ function goDreamResult(id?: string): void {
 </script>
 
 <template>
-  <view class="record-page">
+  <view class="record-page" :style="cssVars">
     <StarryBackground :type="backgroundType" />
 
     <view class="record-page__content">
@@ -170,8 +172,8 @@ function goDreamResult(id?: string): void {
 
     &--dream {
       flex: 1;
-      background: linear-gradient(135deg, $dream-purple, #4A1D8E);
-      box-shadow: 0 8rpx 24rpx $glow-purple;
+      background: linear-gradient(135deg, var(--theme-gradient-start), var(--theme-gradient-end));
+      box-shadow: 0 8rpx 24rpx var(--theme-accent-glow);
     }
 
     &--reality {
