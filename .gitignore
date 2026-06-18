@@ -4,5 +4,16 @@ unpackage/
 .hbuilderx/
 *.local
 .DS_Store
+
+# 后端（旧 Express 版本）
 server/.env
 server/node_modules/
+
+# 后端（Cloudflare Workers）
+workers/.wrangler/
+workers/.dev.vars
+workers/node_modules/
+
+# 构建产物 / 缓存
+.wrangler/
+.cache/

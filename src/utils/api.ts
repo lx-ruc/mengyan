@@ -4,9 +4,12 @@ import type { RealityRecord } from '@/types/reality'
 
 const isDev = (import.meta as any).env?.DEV ?? true
 
-const API_BASE_URL = isDev
-  ? 'http://localhost:3001'
-  : 'https://your-production-domain.com'
+// 构建时通过 VITE_API_BASE_URL 注入后端域名（Cloudflare Pages 环境变量）。
+// 本地开发指向 wrangler dev（默认 8787）。
+// 兜底域名 api.yourdomain.com 需在部署时被 VITE_API_BASE_URL 覆盖。
+const API_BASE_URL =
+  (import.meta as any).env?.VITE_API_BASE_URL ??
+  (isDev ? 'http://localhost:8787' : 'https://api.yourdomain.com')
 
 const TIMEOUT = 15000
 

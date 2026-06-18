@@ -1,0 +1,26 @@
+name = "dream-verify-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-15"
+compatibility_flags = ["nodejs_compat"]
+
+# ── 非敏感变量（可直接提交到 git）──────────────────────────────
+# 上线后改为你的真实域名（前端 Pages 域名，逗号分隔）
+[vars]
+ALLOWED_ORIGINS = "https://yourdomain.com,https://www.yourdomain.com"
+
+# ── 敏感变量（不要写在这里！用 wrangler secret 命令配置）──────
+# wrangler secret put GEMINI_API_KEY
+# 提示后粘贴 Google AI Studio 拿到的 Key
+
+# ── 自定义域名（在 Cloudflare Dashboard 配好 DNS 后启用）──────
+# routes = [
+#   { pattern = "api.yourdomain.com/*", custom_domain = true }
+# ]
+
+# ── Observability ──────────────────────────────────────────
+[observability]
+enabled = true
+
+# 限流策略：在 Cloudflare Dashboard → Security → WAF → Rate limiting rules
+# 配置（如：同 IP 每分钟最多 10 次 /api/ 请求）。Workers 多实例下
+# in-memory rate limiter 无效，故不在代码里实现。
